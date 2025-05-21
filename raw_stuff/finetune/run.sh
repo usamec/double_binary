@@ -1,0 +1,1 @@
+torchrun --standalone --nproc_per_node=4 finetune.py --run_name llama3-1b-20fin --model_name "meta-llama/Meta-Llama-3-8B" --data_path redpajama_tokenized_llama3/ --base_lr 1e-5 --teacher_microbatch 8 --microbatch 4 --seq_size 8192 --distill --checkpoint checkpoints/llama3-8B-dsf1bit-20-ft.pt --batch_size 16  --q_lr_mult 300 --pvfrac 0.99999
